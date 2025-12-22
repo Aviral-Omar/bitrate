@@ -1,5 +1,5 @@
 name := 'bitrate'
-appid := 'com.github.Aviral-Omar.bitrate'
+appid := 'io.AviralOmar.bitrate'
 
 rootdir := ''
 prefix := '/usr'
@@ -79,4 +79,3 @@ tag version:
     git add Cargo.lock
     git commit -m 'release: {{version}}'
     git tag -a {{version}} -m ''
-

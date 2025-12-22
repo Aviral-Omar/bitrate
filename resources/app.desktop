@@ -2,7 +2,7 @@
 Name=Bitrate
 Comment=A Bandwidth Monitor applet for COSMIC Desktop.
 Type=Application
-Icon=com.github.Aviral-Omar.bitrate
+Icon=io.AviralOmar.bitrate
 Exec=bitrate %F
 Terminal=false
 StartupNotify=true

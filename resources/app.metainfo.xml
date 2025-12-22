@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <component type="desktop-application">
-  <id>com.github.Aviral-Omar.bitrate</id>
+  <id>io.AviralOmar.bitrate</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MPL-2.0</project_license>
   <name>Bitrate</name>
@@ -9,9 +9,9 @@
     https://github.com/Aviral-Omar/bitrate.git/raw/main/resources/icons/hicolor/scalable/apps/icon.svg
   </icon>
   <url type="vcs-browser">https://github.com/Aviral-Omar/bitrate.git</url>
-  <launchable type="desktop-id">com.github.Aviral-Omar.bitrate.desktop</launchable>
+  <launchable type="desktop-id">io.AviralOmar.bitrate.desktop</launchable>
   <provides>
-    <id>com.github.Aviral-Omar.bitrate</id>
+    <id>io.AviralOmar.bitrate</id>
     <binaries>
       <binary>bitrate</binary>
     </binaries>
@@ -32,4 +32,3 @@
   </keywords>
   <content_rating type="oars-1.1" />
 </component>
-

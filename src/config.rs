@@ -1,9 +1,34 @@
 // SPDX-License-Identifier: MPL-2.0
 
-use cosmic::cosmic_config::{self, cosmic_config_derive::CosmicConfigEntry, CosmicConfigEntry};
+use {
+    cosmic::cosmic_config::{self, CosmicConfigEntry, cosmic_config_derive::CosmicConfigEntry},
+    serde::{Deserialize, Serialize},
+};
 
-#[derive(Debug, Default, Clone, CosmicConfigEntry, Eq, PartialEq)]
+#[derive(Debug, Default, Deserialize, Serialize, Clone, Eq, PartialEq)]
+#[serde(rename_all = "lowercase")]
+pub enum Unit {
+    Bits,
+    #[default]
+    Bytes,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone, CosmicConfigEntry, Eq, PartialEq)]
 #[version = 1]
-pub struct Config {
-    demo: String,
+pub struct BitrateAppletConfig {
+    pub unit: Unit,
+    pub update_rate: u8,
+    pub show_download_speed: bool,
+    pub show_upload_speed: bool,
+}
+
+impl Default for BitrateAppletConfig {
+    fn default() -> Self {
+        BitrateAppletConfig {
+            unit: Unit::Bytes,
+            update_rate: 1,
+            show_download_speed: true,
+            show_upload_speed: true,
+        }
+    }
 }

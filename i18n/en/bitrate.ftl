@@ -1,7 +1,6 @@
-app-title = Bitrate
-about = About
-view = View
-welcome = Welcome to COSMIC! ✨
-page-id = Page { $num }
-git-description = Git commit {$hash} on {$date}
-example-row = Example Row
+unit = Unit
+bits = Bits
+bytes = Bytes
+update-rate = Update Rate
+show-download-speed = Show Download Speed
+show-upload-speed = Show Upload Speed
