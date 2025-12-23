@@ -1,6 +1,6 @@
 # Bitrate
 
-A Bandwidth Monitor applet for COSMIC Desktop.
+A Bandwidth Monitor applet for the COSMIC™ desktop.
 
 ## Installation
 

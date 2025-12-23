@@ -1,5 +1,5 @@
-name := 'bitrate'
-appid := 'io.AviralOmar.bitrate'
+name := 'cosmic-ext-applet-bitrate'
+appid := 'io.github.cosmic_utils.cosmic-ext-applet-bitrate'
 
 rootdir := ''
 prefix := '/usr'

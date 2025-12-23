@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <component type="desktop-application">
-  <id>io.AviralOmar.bitrate</id>
+  <id>io.github.cosmic_utils.cosmic-ext-applet-bitrate</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MPL-2.0</project_license>
   <name>Bitrate</name>
-  <summary>A Bandwidth Monitor applet for COSMIC Desktop.</summary>
+  <summary>A Bandwidth Monitor applet for the COSMIC™ desktop.</summary>
   <icon type="remote" width="64" height="64" scale="1">
     https://github.com/Aviral-Omar/bitrate.git/raw/main/resources/icons/hicolor/scalable/apps/icon.svg
   </icon>
   <url type="vcs-browser">https://github.com/Aviral-Omar/bitrate.git</url>
-  <launchable type="desktop-id">io.AviralOmar.bitrate.desktop</launchable>
+  <launchable
+        type="desktop-id"
+    >io.github.cosmic_utils.cosmic-ext-applet-bitrate.desktop</launchable>
   <provides>
-    <id>io.AviralOmar.bitrate</id>
+    <id>io.github.cosmic_utils.cosmic-ext-applet-bitrate</id>
     <binaries>
       <binary>bitrate</binary>
     </binaries>

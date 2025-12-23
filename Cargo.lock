@@ -584,21 +584,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "bitrate"
-version = "0.1.0"
-dependencies = [
- "futures-util",
- "i18n-embed",
- "i18n-embed-fl",
- "libcosmic",
- "rust-embed",
- "serde",
- "tokio",
- "tracing",
- "tracing-subscriber",
-]
-
-[[package]]
 name = "block"
 version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1038,6 +1023,21 @@ source = "git+https://github.com/pop-os/libcosmic.git#dd3610b8ae4f1bcf2e2299e82f
 dependencies = [
  "quote",
  "syn 2.0.111",
+]
+
+[[package]]
+name = "cosmic-ext-applet-bitrate"
+version = "0.1.0"
+dependencies = [
+ "futures-util",
+ "i18n-embed",
+ "i18n-embed-fl",
+ "libcosmic",
+ "rust-embed",
+ "serde",
+ "tokio",
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]

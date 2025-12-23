@@ -31,7 +31,6 @@ use {
     tokio,
 };
 
-const APPID: &str = "io.AviralOmar.bitrate";
 static AUTOSIZE_MAIN_ID: LazyLock<widget::Id> = LazyLock::new(|| widget::Id::new("autosize-main"));
 
 pub struct AppModel {
@@ -182,7 +181,7 @@ impl cosmic::Application for AppModel {
     type Message = Message;
 
     /// Unique identifier in RDNN (reverse domain name notation) format.
-    const APP_ID: &'static str = "io.AviralOmar.bitrate";
+    const APP_ID: &'static str = "io.github.cosmic_utils.cosmic-ext-applet-bitrate";
 
     fn core(&self) -> &cosmic::Core {
         &self.core
@@ -317,7 +316,7 @@ impl cosmic::Application for AppModel {
             return self
                 .core
                 .applet
-                .icon_button(APPID)
+                .icon_button(Self::APP_ID)
                 .on_press_down(Message::TogglePopup)
                 .width(Length::Shrink)
                 .into();

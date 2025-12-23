@@ -1,9 +1,9 @@
 [package]
-name = "bitrate"
+name = "cosmic-ext-applet-bitrate"
 version = "0.1.0"
 edition = "2024"
-license = "MPL-2.0"
-description = "A Bandwidth Monitor applet for COSMIC Desktop."
+license = "GPL-3.0"
+description = "A Bandwidth Monitor applet for the COSMIC™ desktop."
 repository = "https://github.com/Aviral-Omar/bitrate.git"
 
 [dependencies]
