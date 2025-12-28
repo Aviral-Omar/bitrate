@@ -1,7 +1,5 @@
-// SPDX-License-Identifier: MPL-2.0
 // TODO: Code cleanup
 // TODO: Check default interface dbus config
-// TODO: Icon tooltip
 // TODO: Bring view close to other applets
 use {
     crate::{
@@ -25,7 +23,7 @@ use {
             commands::popup::{destroy_popup, get_popup},
             graphics::text::cosmic_text::Attrs,
         },
-        theme,
+        surface, theme,
         widget::{
             self, autosize, button, container,
             rectangle_tracker::{
@@ -39,6 +37,8 @@ use {
 };
 
 static AUTOSIZE_MAIN_ID: LazyLock<widget::Id> = LazyLock::new(|| widget::Id::new("autosize-main"));
+static AUTOSIZE_ICON_BTN_ID: LazyLock<widget::Id> =
+    LazyLock::new(|| widget::Id::new("autosize-icon-btn"));
 
 pub struct AppModel {
     /// Application state which is managed by the COSMIC runtime
@@ -91,6 +91,7 @@ pub enum Message {
     ShowUploadSpeedChanged(bool),
     Rectangle(RectangleUpdate<u32>),
     ThemeChanged(cosmic::config::CosmicTk),
+    Surface(surface::Action),
 }
 
 impl AppModel {
@@ -438,28 +439,47 @@ impl cosmic::Application for AppModel {
         }
 
         let button: Element<'_, Self::Message>;
+        // TODO: Try with single autosize_id after iced rebase to 0.14
+        let autosize_id: widget::Id;
         if is_horizontal && (self.config.show_download_speed || self.config.show_upload_speed) {
+            autosize_id = AUTOSIZE_MAIN_ID.clone();
             button = button::custom(self.horizontal_layout())
                 .padding(0)
                 .on_press_down(Message::TogglePopup)
                 .class(cosmic::theme::Button::AppletIcon)
                 .into();
         } else {
+            autosize_id = AUTOSIZE_ICON_BTN_ID.clone();
             button = self
                 .core
                 .applet
-                .icon_button(Self::APP_ID)
-                .on_press_down(Message::TogglePopup)
+                .applet_tooltip::<Message>(
+                    self.core
+                        .applet
+                        .icon_button(Self::APP_ID)
+                        .on_press_down(Message::TogglePopup)
+                        .class(cosmic::theme::Button::AppletIcon),
+                    format!(
+                        "{} {}  {} {}",
+                        self.download_speed_display,
+                        self.download_unit,
+                        self.upload_speed_display,
+                        self.upload_unit
+                    ),
+                    self.popup.is_some(),
+                    Message::Surface,
+                    None,
+                )
                 .into();
         }
 
         autosize::autosize(
             if let Some(tracker) = self.rectangle_tracker.as_ref() {
-                Element::from(tracker.container(0, button).ignore_bounds(true))
+                tracker.container(0, button).ignore_bounds(true).into()
             } else {
                 button
             },
-            AUTOSIZE_MAIN_ID.clone(),
+            autosize_id,
         )
         .limits(limits)
         .into()
@@ -669,6 +689,11 @@ impl cosmic::Application for AppModel {
                 if self.popup.as_ref() == Some(&id) {
                     self.popup = None;
                 }
+            }
+            Message::Surface(a) => {
+                return cosmic::task::message(cosmic::Action::Cosmic(
+                    cosmic::app::Action::Surface(a),
+                ));
             }
         }
         cosmic::Task::none()
