@@ -6,7 +6,7 @@
   <name>Bitrate</name>
   <summary>A Bandwidth Monitor applet for the COSMIC™ desktop.</summary>
   <icon type="remote" width="64" height="64" scale="1">
-    https://github.com/Aviral-Omar/bitrate.git/raw/main/resources/icons/hicolor/scalable/apps/icon.svg
+    https://github.com/Aviral-Omar/bitrate.git/raw/main/data/icons/hicolor/scalable/apps/icon.svg
   </icon>
   <url type="vcs-browser">https://github.com/Aviral-Omar/bitrate.git</url>
   <launchable
