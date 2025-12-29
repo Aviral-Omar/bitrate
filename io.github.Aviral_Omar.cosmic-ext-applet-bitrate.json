@@ -12,9 +12,7 @@
     "--filesystem=/sys/class/net:ro",
     "--socket=wayland",
     "--device=dri",
-    "--talk-name=com.system76.CosmicSettingsDaemon",
-    "--talk-name=org.freedesktop.portal.Desktop",
-    "--talk-name=org.freedesktop.portal.Location"
+    "--talk-name=com.system76.CosmicSettingsDaemon"
   ],
   "build-options": {
     "append-path": "/usr/lib/sdk/rust-stable/bin",

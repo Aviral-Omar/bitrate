@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Bitrate
 Type=Application
-Exec=cosmic-ext-applet-bitrate %F
+Exec=cosmic-ext-applet-bitrate
 Terminal=false
 Categories=COSMIC;Iced;
 Keywords=COSMIC
