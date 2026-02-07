@@ -1,18 +1,19 @@
 {
-  "id": "io.github.Aviral_Omar.cosmic-ext-applet-bitrate",
+  "id": "io.github.avomar.cosmic-ext-applet-bitrate",
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "24.08",
-  "base": "com.system76.Cosmic.BaseApp",
-  "base-version": "stable",
   "sdk": "org.freedesktop.Sdk",
   "sdk-extensions": ["org.freedesktop.Sdk.Extension.rust-stable"],
   "command": "cosmic-ext-applet-bitrate",
   "finish-args": [
+    "--share=network",
     "--filesystem=xdg-config/cosmic:rw",
     "--filesystem=/sys/class/net:ro",
     "--socket=wayland",
     "--device=dri",
-    "--talk-name=com.system76.CosmicSettingsDaemon"
+    "--talk-name=com.system76.CosmicSettingsDaemon",
+    "--talk-name=org.freedesktop.portal.Desktop",
+    "--talk-name=org.freedesktop.portal.Location"
   ],
   "build-options": {
     "append-path": "/usr/lib/sdk/rust-stable/bin",
@@ -28,9 +29,9 @@
         "cargo --offline fetch --manifest-path Cargo.toml --verbose",
         "cargo --offline build --release --verbose",
         "install -Dm0755 ./target/release/cosmic-ext-applet-bitrate /app/bin/cosmic-ext-applet-bitrate",
-        "install -Dm0644 ./res/io.github.Aviral_Omar.cosmic-ext-applet-bitrate.desktop -t /app/share/applications/",
-        "install -Dm0644 ./res/io.github.Aviral_Omar.cosmic-ext-applet-bitrate.metainfo.xml -t /app/share/metainfo/",
-        "install -Dm0644 ./res/icons/apps/io.github.Aviral_Omar.cosmic-ext-applet-bitrate.svg -t /app/share/icons/hicolor/scalable/apps/"
+        "install -Dm0644 ./res/io.github.avomar.cosmic-ext-applet-bitrate.desktop -t /app/share/applications/",
+        "install -Dm0644 ./res/io.github.avomar.cosmic-ext-applet-bitrate.metainfo.xml -t /app/share/metainfo/",
+        "install -Dm0644 ./res/icons/apps/io.github.avomar.cosmic-ext-applet-bitrate.svg -t /app/share/icons/hicolor/scalable/apps/"
       ],
       "sources": [
         {

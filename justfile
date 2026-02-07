@@ -197,7 +197,6 @@ flatpak-install:
         --install \
         --install-deps-from=flathub \
         --repo=repo \
-        --require-changes \
         --user \
         "flatpak-out/${arch}" \
         {{appid}}.json
@@ -214,7 +213,6 @@ flatpak-build:
         --force-clean \
         --install-deps-from=flathub \
         --repo=repo \
-        --require-changes \
         --sandbox \
         --user \
         --verbose \

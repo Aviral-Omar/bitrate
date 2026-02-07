@@ -1,3 +1,4 @@
+// TODO: Theme change handling
 use {
     crate::{
         config::{BitrateAppletConfig, Unit},
@@ -90,7 +91,7 @@ pub enum Message {
     ShowDownloadSpeedChanged(bool),
     ShowUploadSpeedChanged(bool),
     Rectangle(RectangleUpdate<u32>),
-    ThemeChanged(cosmic::config::CosmicTk),
+    ThemeChanged(Box<cosmic::config::CosmicTk>),
     Surface(surface::Action),
 }
 
@@ -337,7 +338,7 @@ impl cosmic::Application for AppModel {
 
     type Message = Message;
 
-    const APP_ID: &'static str = "io.github.Aviral_Omar.cosmic-ext-applet-bitrate";
+    const APP_ID: &'static str = "io.github.avomar.cosmic-ext-applet-bitrate";
 
     fn core(&self) -> &cosmic::Core {
         &self.core
@@ -556,9 +557,9 @@ impl cosmic::Application for AppModel {
             self.core()
                 .watch_config::<BitrateAppletConfig>(Self::APP_ID)
                 .map(|update| Message::UpdateConfig(update.config)),
-            self.core
+            self.core()
                 .watch_config("com.system76.CosmicTk")
-                .map(|u| Message::ThemeChanged(u.config)),
+                .map(|u| Message::ThemeChanged(Box::new(u.config))),
         ])
     }
 
@@ -603,10 +604,12 @@ impl cosmic::Application for AppModel {
                         .unwrap()
                         .clone();
                     self.network_interfaces = network::get_network_interfaces();
-                    if let Some(new_interface) = self.network_interfaces.get(selected_interface) {
-                        if selected_network_interface != *new_interface {
-                            self.select_default_network_interface();
-                        }
+                    if let Some(selected_interface_index) = self
+                        .network_interfaces
+                        .iter()
+                        .position(|interface| &selected_network_interface == interface)
+                    {
+                        self.selected_network_interface = Some(selected_interface_index);
                     } else {
                         self.select_default_network_interface();
                     }
@@ -674,7 +677,7 @@ impl cosmic::Application for AppModel {
                     let new_id = window::Id::unique();
                     self.popup.replace(new_id);
                     let mut popup_settings = self.core.applet.get_popup_settings(
-                        self.core.main_window_id().unwrap(),
+                        self.core().main_window_id().unwrap(),
                         new_id,
                         None,
                         None,
@@ -707,9 +710,7 @@ impl cosmic::Application for AppModel {
                     .1;
             }
             Message::PopupClosed(id) => {
-                if self.popup.as_ref() == Some(&id) {
-                    self.popup = None;
-                }
+                self.popup.take_if(|stored_id| stored_id == &id);
             }
             Message::Surface(a) => {
                 return cosmic::task::message(cosmic::Action::Cosmic(

@@ -1,6 +1,6 @@
 [package]
 name = "cosmic-ext-applet-bitrate"
-version = "2.0.1"
+version = "2.0.2"
 edition = "2024"
 license = "GPL-3.0"
 description = "A Bandwidth Monitor applet for the COSMIC™ desktop"

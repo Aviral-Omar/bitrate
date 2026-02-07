@@ -7,7 +7,7 @@ Categories=COSMIC;Iced;
 Keywords=COSMIC
 Comment=A Bandwidth Monitor applet for the COSMIC™ desktop
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-Icon=io.github.Aviral_Omar.cosmic-ext-applet-bitrate
+Icon=io.github.avomar.cosmic-ext-applet-bitrate
 StartupNotify=true
 NoDisplay=true
 X-CosmicApplet=true
