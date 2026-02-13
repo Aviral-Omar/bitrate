@@ -518,7 +518,7 @@ impl cosmic::Application for AppModel {
             padded_control(widget::settings::item(
                 fl!("update-rate"),
                 spin_button::spin_button(
-                    format!("{} s", self.config.update_rate),
+                    format!("{} {}", self.config.update_rate, fl!("seconds")),
                     self.config.update_rate,
                     1,
                     1,
