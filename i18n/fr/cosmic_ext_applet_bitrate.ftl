@@ -5,3 +5,4 @@ bytes = Octets
 update-rate = Taux de rafraîchissement
 show-download-speed = Afficher la vitesse de téléchargement
 show-upload-speed = Afficher la vitesse de téléversement
+seconds = s
