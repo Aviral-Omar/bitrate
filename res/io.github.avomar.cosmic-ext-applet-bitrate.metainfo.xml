@@ -6,10 +6,16 @@
   <project_group>COSMIC</project_group>
   <update_contact>aviralomar0301@gmail.com</update_contact>
   <name>Bitrate</name>
+  <name xml:lang="uk">Бітрейт</name>
   <summary>A Bandwidth Monitor applet for the COSMIC™ desktop</summary>
+  <summary xml:lang="uk">Віджет моніторингу мережі для середовища COSMIC™</summary>
   <description>
     <p
         >A lightweight network bandwidth monitoring applet for the COSMIC desktop environment with UI for customization.</p>
+  </description>
+  <description xml:lang="uk">
+    <p
+        >Простий віджет для моніторингу пропускної здатності мережі в середовищі COSMIC з інтерфейсом для налаштувань.</p>
   </description>
   <developer id="@aviralomar@fosstodon.org">
     <name>Aviral Omar</name>
