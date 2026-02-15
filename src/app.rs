@@ -216,16 +216,18 @@ impl AppModel {
         };
         let mut download_unit = String::new();
         if download_power >= 20 {
-            download_unit.push('M');
+            download_unit.push_str(fl!("mega-short").as_str());
         } else if download_power >= 10 {
-            download_unit.push('K');
+            download_unit.push_str(fl!("kilo-short").as_str());
         }
         match self.config.unit {
             Unit::Bits => {
-                download_unit.push_str("b/s");
+                download_unit
+                    .push_str(format!("{}/{}", fl!("bits-short"), fl!("second-short")).as_str());
             }
             Unit::Bytes => {
-                download_unit.push_str("B/s");
+                download_unit
+                    .push_str(format!("{}/{}", fl!("bytes-short"), fl!("second-short")).as_str());
             }
         }
         download_unit.push_str("  ↓");
@@ -251,16 +253,18 @@ impl AppModel {
         };
         let mut upload_unit = String::new();
         if upload_power >= 20 {
-            upload_unit.push('M');
+            upload_unit.push_str(fl!("mega-short").as_str());
         } else if upload_power >= 10 {
-            upload_unit.push('K');
+            upload_unit.push_str(fl!("kilo-short").as_str());
         }
         match self.config.unit {
             Unit::Bits => {
-                upload_unit.push_str("b/s");
+                upload_unit
+                    .push_str(format!("{}/{}", fl!("bits-short"), fl!("second-short")).as_str());
             }
             Unit::Bytes => {
-                upload_unit.push_str("B/s");
+                upload_unit
+                    .push_str(format!("{}/{}", fl!("bytes-short"), fl!("second-short")).as_str());
             }
         }
         upload_unit.push_str("  ↑");
@@ -518,7 +522,7 @@ impl cosmic::Application for AppModel {
             padded_control(widget::settings::item(
                 fl!("update-rate"),
                 spin_button::spin_button(
-                    format!("{} s", self.config.update_rate),
+                    format!("{} {}", self.config.update_rate, fl!("second-short")),
                     self.config.update_rate,
                     1,
                     1,
