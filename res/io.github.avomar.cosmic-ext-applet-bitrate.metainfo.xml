@@ -8,10 +8,15 @@
   <name>Bitrate</name>
   <name xml:lang="uk">Бітрейт</name>
   <summary>A Bandwidth Monitor applet for the COSMIC™ desktop</summary>
+  <summary xml:lang="cs">Applet pro sledování šířky pásma v prostředí COSMIC™</summary>
   <summary xml:lang="uk">Віджет моніторингу мережі для середовища COSMIC™</summary>
   <description>
     <p
         >A lightweight network bandwidth monitoring applet for the COSMIC desktop environment with UI for customization.</p>
+  </description>
+  <description xml:lang="cs">
+    <p
+        >Applet pro sledování síťové šířky pásma v prostředí COSMIC s uživatelským rozhraním pro přizpůsobení.</p>
   </description>
   <description xml:lang="uk">
     <p
@@ -45,6 +50,8 @@
           https://raw.githubusercontent.com/Aviral-Omar/bitrate/refs/heads/main/res/screenshots/view_window_expanded.png</image>
         <caption
             >The applet in the top panel with the view window open.</caption>
+        <caption xml:lang="cs"
+            >Applet s otevřeným oknem v horním panelu.</caption>
         <caption xml:lang="uk">
             Розміщений віджет з відкритим вікном перегляду.</caption>
        </screenshot>

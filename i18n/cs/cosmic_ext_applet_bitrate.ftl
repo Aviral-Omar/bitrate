@@ -1,0 +1,12 @@
+network-interface = Síťové rozhraní
+unit = Jednotka dat
+bits = Bity
+bytes = Bajty
+update-rate = Frekvence aktualizace
+show-download-speed = Zobrazit rychlost stahování
+show-upload-speed = Zobrazit rychlost odesílání
+second-short = s
+kilo-short = K
+mega-short = M
+bytes-short = B
+bits-short = b
