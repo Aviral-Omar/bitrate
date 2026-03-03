@@ -13,19 +13,14 @@
   <description>
     <p
         >A lightweight network bandwidth monitoring applet for the COSMIC desktop environment with UI for customization.</p>
-  </description>
-  <description xml:lang="cs">
-    <p
+    <p xml:lang="cs"
         >Applet pro sledování síťové šířky pásma v prostředí COSMIC s uživatelským rozhraním pro přizpůsobení.</p>
-  </description>
-  <description xml:lang="uk">
-    <p
+    <p xml:lang="uk"
         >Легкий і зручний віджет для моніторингу пропускної здатності мережі з інтерфейсом для налаштувань.</p>
   </description>
   <developer id="@aviralomar@fosstodon.org">
     <name>Aviral Omar</name>
   </developer>
-  <developer_name>Aviral Omar</developer_name>
   <icon type="stock">
     io.github.avomar.cosmic-ext-applet-bitrate.svg
   </icon>
@@ -52,16 +47,14 @@
             >The applet in the top panel with the view window open.</caption>
         <caption xml:lang="cs"
             >Applet s otevřeným oknem v horním panelu.</caption>
-        <caption xml:lang="uk">
-            Розміщений віджет з відкритим вікном перегляду.</caption>
+        <caption xml:lang="uk"
+            >Розміщений віджет з відкритим вікном перегляду.</caption>
        </screenshot>
     </screenshots>
   <provides>
     <id>io.github.Aviral_Omar.cosmic-ext-applet-bitrate</id>
     <id>com.system76.CosmicApplet</id>
-    <binaries>
-      <binary>cosmic-ext-applet-bitrate</binary>
-    </binaries>
+    <binary>cosmic-ext-applet-bitrate</binary>
   </provides>
   <recommends>
     <internet>always</internet>
