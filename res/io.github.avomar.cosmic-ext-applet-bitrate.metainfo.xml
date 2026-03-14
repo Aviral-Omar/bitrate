@@ -8,14 +8,20 @@
   <name>Bitrate</name>
   <name xml:lang="uk">Бітрейт</name>
   <summary>A Bandwidth Monitor applet for the COSMIC™ desktop</summary>
-  <summary xml:lang="cs">Applet pro sledování šířky pásma v prostředí COSMIC™</summary>
-  <summary xml:lang="uk">Віджет моніторингу мережі для середовища COSMIC™</summary>
+  <summary
+        xml:lang="cs"
+    >Applet pro sledování šířky pásma v prostředí COSMIC™</summary>
+  <summary
+        xml:lang="uk"
+    >Віджет моніторингу мережі для середовища COSMIC™</summary>
   <description>
     <p
         >A lightweight network bandwidth monitoring applet for the COSMIC desktop environment with UI for customization.</p>
-    <p xml:lang="cs"
+    <p
+            xml:lang="cs"
         >Applet pro sledování síťové šířky pásma v prostředí COSMIC s uživatelským rozhraním pro přizpůsobení.</p>
-    <p xml:lang="uk"
+    <p
+            xml:lang="uk"
         >Легкий і зручний віджет для моніторингу пропускної здатності мережі з інтерфейсом для налаштувань.</p>
   </description>
   <developer id="@aviralomar@fosstodon.org">
@@ -46,9 +52,11 @@
           https://raw.githubusercontent.com/Aviral-Omar/bitrate/refs/heads/main/res/screenshots/view_window_expanded.png</image>
         <caption
             >The applet in the top panel with the view window open.</caption>
-        <caption xml:lang="cs"
+        <caption
+                xml:lang="cs"
             >Applet s otevřeným oknem v horním panelu.</caption>
-        <caption xml:lang="uk"
+        <caption
+                xml:lang="uk"
             >Розміщений віджет з відкритим вікном перегляду.</caption>
        </screenshot>
     </screenshots>
@@ -79,4 +87,56 @@
     <keyword>Monitor</keyword>
     <keyword>Network</keyword>
   </keywords>
+  <releases>
+  <release version="2.0.4" date="2026-03-14">
+    <description>
+    <p>Release description</p>
+      <ul>
+        <li>Fixed appstream metainfo validation</li>
+      </ul>
+    </description>
+  </release>
+  <release version="2.0.3" date="2026-03-01">
+    <description>
+    <p>Release description</p>
+      <ul>
+        <li>Added Ukrainian and Czech translations</li>
+      </ul>
+    </description>
+  </release>
+    <release version="2.0.2" date="2026-02-08">
+      <description>
+      <p>Release description</p>
+        <ul>
+          <li>Fix theme not changing in flatpak.</li>
+          <li>Add French and Swedish translation.</li>
+          <li>Change app id.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.0.1" date="2026-01-05">
+        <description>
+        <p>Release description</p>
+          <ul>
+            <li>Fixed icon not appearing in COSMIC Store</li>
+          </ul>
+        </description>
+    </release>
+    <release version="2.0.0" date="2026-01-05">
+      <description>
+        <p>Release description</p>
+          <ul>
+            <li>Added dropdown to select network interface</li>
+          </ul>
+      </description>
+    </release>
+    <release version="1.0.0" date="2025-12-30">
+      <description>
+        <p>Release description</p>
+          <ul>
+            <li>Initial release</li>
+          </ul>
+      </description>
+    </release>
+  </releases>
 </component>

@@ -1027,7 +1027,7 @@ dependencies = [
 
 [[package]]
 name = "cosmic-ext-applet-bitrate"
-version = "2.0.3"
+version = "2.0.4"
 dependencies = [
  "futures-util",
  "i18n-embed",
